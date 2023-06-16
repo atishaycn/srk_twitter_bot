@@ -3,6 +3,7 @@ import os
 import json
 from create_tweet_auto import main_post_reply
 from loguru import logger
+import time
 # To set your environment variables in your terminal run the following line:
 # export 'BEARER_TOKEN'='<your_bearer_token>'
 bearer_token = os.environ.get("BEARER_TOKEN")
@@ -73,4 +74,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    while True:
+        logger.info("Running main")
+        main()
+        time.sleep(60)
